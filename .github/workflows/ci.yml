@@ -1,0 +1,19 @@
+name: ci
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Contract tests
+        run: |
+          (cd contracts/pay-guard && cargo test)
+          (cd contracts/registry && cargo test)
+      - name: Build simulator
+        run: npm ci && npm run build:sim
+      - name: TypeScript tests and offline attack demo
+        run: npm run typecheck && npm test

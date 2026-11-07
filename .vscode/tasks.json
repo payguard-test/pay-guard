@@ -1,0 +1,11 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    { "label": "1. Install", "type": "shell", "command": "npm install", "problemMatcher": [] },
+    { "label": "2. Demo (offline)", "type": "shell", "command": "npm run demo", "problemMatcher": [] },
+    { "label": "3. Demo (local NEAR node)", "type": "shell", "command": "npm run demo:sandbox", "problemMatcher": [] },
+    { "label": "4. All tests", "type": "shell", "command": "(cd contracts/pay-guard && cargo test) && (cd contracts/registry && cargo test) && npm run typecheck && npm test", "problemMatcher": [] },
+    { "label": "5. Testnet setup", "type": "shell", "command": "npm run build:contracts && npm run setup:testnet", "problemMatcher": [] },
+    { "label": "6. Demo (testnet)", "type": "shell", "command": "npm run demo:testnet", "problemMatcher": [] }
+  ]
+}

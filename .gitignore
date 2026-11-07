@@ -1,0 +1,30 @@
+# Secrets: never commit keys
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+**/credentials/
+**/near-credentials/
+*-key.json
+
+# Build output
+target/
+node_modules/
+dist/
+*.wasm
+
+# Logs and local state
+*.log
+.DS_Store
+
+# Local state: generated accounts and keys, checker cache, demo logs
+.pay-guard/
+logs/
+!docs/demo-offline.log
+
+# Local-only offline Rust dependencies (too big for GitHub)
+vendor/
+.cargo/
+!docs/demo-testnet.log
+*.tar.gz

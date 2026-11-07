@@ -1,0 +1,35 @@
+{
+  "name": "pay-guard",
+  "version": "0.1.0",
+  "description": "Counterparty check for AI agents that pay on NEAR, enforced on chain",
+  "scripts": {
+    "test": "tsx --test test/*.test.ts",
+    "typecheck": "tsc --noEmit",
+    "build:contracts": "cd contracts/pay-guard && cargo near build non-reproducible-wasm --no-abi && cd ../registry && cargo near build non-reproducible-wasm --no-abi",
+    "build:sim": "cd contracts/pay-guard && cargo build --example simulate",
+    "demo": "npm run build:sim && tsx src/demo/attack.ts --mode offline",
+    "demo:sandbox": "npm run build:contracts && tsx src/demo/attack.ts --mode sandbox",
+    "setup:testnet": "tsx src/setup/testnet.ts",
+    "demo:testnet": "tsx src/demo/attack.ts --mode testnet",
+    "checker": "tsx src/checker/server.ts",
+    "check": "tsx src/cli/check.ts",
+    "keygen": "tsx src/cli/keygen.ts",
+    "probe": "tsx src/cli/probe.ts",
+    "claim-name": "tsx src/cli/claim-name.ts"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "near-api-js": "^7.4.0"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "near-sandbox": "^0.3.5",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  },
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20.12"
+  }
+}
