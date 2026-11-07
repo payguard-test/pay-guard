@@ -15,7 +15,8 @@
     "check": "tsx src/cli/check.ts",
     "keygen": "tsx src/cli/keygen.ts",
     "probe": "tsx src/cli/probe.ts",
-    "claim-name": "tsx src/cli/claim-name.ts"
+    "claim-name": "tsx src/cli/claim-name.ts",
+    "build:web": "esbuild web/main.ts --bundle --format=iife --minify --target=es2020 --outfile=docs/app.js"
   },
   "license": "MIT",
   "dependencies": {

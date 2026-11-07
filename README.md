@@ -4,6 +4,8 @@ A counterparty check for AI agents that pay on NEAR. Before an agent sends funds
 
 Built at NEAR HACKATHON. Track: AI Security & Defense (`security`).
 
+**Live site:** https://payguard-test.github.io/pay-guard/ checks any NEAR testnet account in your browser with the same scoring code, reading the live contracts.
+
 ## The problem
 
 An agent that can pay can be talked into paying the wrong party: an instruction hidden in an invoice or webpage, a lookalike account name, a "we moved accounts" message. On-chain payments cannot be reversed. Today an agent usually either holds a key that can drain its account, or follows a static allowlist that someone keeps up by hand. Neither one judges the counterparty at payment time, and neither limits the damage once the agent is compromised.
